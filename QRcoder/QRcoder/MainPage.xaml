@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             x:Class="QRcoder.MainPage"
+             BackgroundColor="White"
+             Title="QR Generator">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <cv:BarcodeImage  x:Name="QR"
+                              WidthRequest="400" 
+                              HeightRequest="400" 
+                              BarcodeFormat="QR_CODE" 
+                              BarcodeHeight="400"
+                              BarcodeWidth="400"
+                              BarcodeMargin="5"
+                              BarcodeBackground="White"
+                              BarcodeForeground="Black"
+                              Barcode=""/>
+            <Editor x:Name="QRText"
+                    TextColor="Black"
+                    Placeholder="Type / Paste Content Here"
+                    BackgroundColor="#EEE"
+                    MaxLength="100"/>
+            <Button Text="Update QR" Clicked="Button_Clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
